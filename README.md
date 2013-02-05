@@ -7,6 +7,7 @@ This project will allow you automate the creation of a VM with [devstack](http:/
 * Install [VirtualBox](http://virtualbox.org)
 * Install [vagrant](http://vagrantup.com)
 * Optionally, but it's a good idea, install the vagrant virtualbox [guest additions plugin](https://github.com/dotless-de/vagrant-vbguest)
+* You should have the vagrant project supplied `precise64` box installed. If you don't then execute this: `vagrant box add precise64 http://files.vagrantup.com/precise64.box`
 
 ## Install
 * Clone this repository
