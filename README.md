@@ -17,3 +17,14 @@ This project will allow you automate the creation of a VM with [devstack](http:/
 * `vagrant up`
 
 The initial install takes time so go do something useful or have a coffee! :-) When it's done, you should be able to reach the OpenStack dashboard from [http://localhost:8080](http://localhost:8080). If you see a default apache page then execute `vagrant reload`. If you wish to ssh to the OpenStack virtual box execute `vagrant ssh`.
+
+## Notes
+If you wish to enable **Heat** then add to the `$localrc_cnt` variable (in `manifests/site.pp`) the following:
+
+	ENABLED_SERVICES+=,heat,h-api,h-api-cfn,h-api-cw,h-eng
+
+If you wish to enable **Ceilometer** then add to the `$localrc_cnt` variable (in `manifests/site.pp`) the following:
+
+	enable_service ceilometer-acompute,ceilometer-acentral,ceilometer-collector,ceilometer-api
+	EXTRA_OPTS=(notification_driver=nova.openstack.common.notifier.rabbit_notifier,ceilometer.compute.nova_notifier)
+
