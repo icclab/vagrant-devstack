@@ -20,8 +20,8 @@ Vagrant::Config.run do |config|
 
   config.vm.define :devstack do |devstack_config|
     devstack_config.vm.box = "precise64"
-    devstack_config.vm.boot_mode = :gui
-    #devstack_config.vm.network  :hostonly, "10.1.2.44" #:hostonly or :bridged - default is NAT
+    # devstack_config.vm.boot_mode = :gui
+    # devstack_config.vm.network  :hostonly, "10.1.2.44" #:hostonly or :bridged - default is NAT
     devstack_config.ssh.max_tries = 100
     devstack_config.vm.host_name = "devstack"
     devstack_config.vm.forward_port 80, 8080 #dashboard
