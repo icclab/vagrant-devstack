@@ -35,9 +35,7 @@ MYSQL_PASSWORD=admin
 RABBIT_PASSWORD=admin
 SERVICE_PASSWORD=admin
 SERVICE_TOKEN=admin
-API_RATE_LIMIT=False
-enable_service ceilometer-acompute,ceilometer-acentral,ceilometer-collector,ceilometer-api
-EXTRA_OPTS=(notification_driver=nova.openstack.common.notifier.rabbit_notifier,ceilometer.compute.nova_notifier)"
+API_RATE_LIMIT=False"
 
     file { "/home/vagrant/devstack/localrc":
       content 	=> "$localrc_cnt",
