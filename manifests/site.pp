@@ -17,7 +17,7 @@ node /^devstack/ {
 
 
 	#set if you want to ######
-	$trema = true
+	$trema = false
 	##########################
 	
 	if $trema {
