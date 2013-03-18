@@ -12,8 +12,8 @@ This project will allow you automate the creation of a VM with [devstack](http:/
 ## Install
 * Clone this repository! :-)
 * `cd vagrant-devstack`
-* `git submodules init`
-* `git submodules update`
+* `git submodule init`
+* `git submodule update`
 * `vagrant up`
 
 The initial install takes time so go do something useful or have a coffee! :-) When it's done, you should be able to reach the OpenStack dashboard from [http://10.1.2.44](http://10.1.2.44). If you use the hostmaster plugin then access via [http://devstack.local](http://devstack.local). If you wish to ssh to the OpenStack virtual box execute `vagrant ssh`.
