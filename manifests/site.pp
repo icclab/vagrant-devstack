@@ -15,6 +15,19 @@
 
 node /^devstack/ {
 
+
+	#set if you want to ######
+	$trema = false
+	##########################
+	
+	if $trema {
+		# enter puppet code
+		$source = "https://github.com/nec-openstack/devstack-quantum-nec-openflow.git"
+	}
+	else {
+		$source = "https://github.com/openstack-dev/devstack.git"
+	}
+
 	#ensure git is installed
 	package { 'git':
 		ensure 		=> 'present',
@@ -24,7 +37,7 @@ node /^devstack/ {
 	vcsrepo { "/home/vagrant/devstack":
 		ensure 		=> present,
 		provider 	=> git,
-		source 		=> "https://github.com/openstack-dev/devstack.git",
+		source 		=> $source,
 		user 		=> 'vagrant',
 		require 	=> Package["git"],
 	}
