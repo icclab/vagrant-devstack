@@ -22,10 +22,14 @@ The initial install takes time so go do something useful or have a coffee! :-) W
 
 	`ENABLED_SERVICES+=,heat,h-api,h-api-cfn,h-api-cw,h-eng`
 
+For more information about this [see the OpenStack wiki](http://wiki.openstack.org/Heat).
+
 2. If you wish to enable **Ceilometer** then add to the `$localrc_cnt` variable (in `manifests/site.pp`) the following:
 
 	`enable_service ceilometer-acompute,ceilometer-acentral,ceilometer-collector,ceilometer-api`  
 	`EXTRA_OPTS=(notification_driver=nova.openstack.common.notifier.rabbit_notifier,ceilometer.compute.nova_notifier)`
+
+For information about this see [the OpenStack wiki](https://wiki.openstack.org/wiki/Ceilometer).
 
 3. Currently the VM is allocated 1024MB of RAM. You will only be able to create 1 VM. Suggestion is to either increase the RAM allocation (edit `Vagrantfile`) or create some new OpenStack flavors with less RAM (the smallest default is 512MB) e.g.:
 
