@@ -29,12 +29,14 @@ Vagrant::Config.run do |config|
     devstack_config.vm.customize ["modifyvm", :id, "--memory", 1024]
     devstack_config.ssh.max_tries = 100
     devstack_config.vm.forward_port 80, 8080
+    devstack_config.vm.forward_port 6080, 6080
 
     devstack_config.vm.provision :puppet do |devstack_puppet|
       devstack_puppet.pp_path = "/tmp/vagrant-puppet"
       devstack_puppet.module_path = "modules"
       devstack_puppet.manifests_path = "manifests"
       devstack_puppet.manifest_file = "site.pp"
+      devstack_puppet.facter = { "fqdn" => "devstack.local" }
     end
   end
 end

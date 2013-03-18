@@ -35,6 +35,7 @@ MYSQL_PASSWORD=admin
 RABBIT_PASSWORD=admin
 SERVICE_PASSWORD=admin
 SERVICE_TOKEN=admin
+APACHE_USER=vagrant
 API_RATE_LIMIT=False"
 
     file { "/home/vagrant/devstack/localrc":
