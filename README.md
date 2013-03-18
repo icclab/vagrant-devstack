@@ -4,19 +4,19 @@ This project will allow you automate the creation of a VM with [devstack](http:/
 
 ## Prereqs
 
-* Install [VirtualBox](http://virtualbox.org)
+* Install [VirtualBox](http://virtualbox.org). **Note:** *this has not been tested on the latest vagrant 1.1.0*
 * Install [vagrant](http://vagrantup.com)
-* Optionally, but it's a good idea, install the vagrant virtualbox [guest additions plugin](https://github.com/dotless-de/vagrant-vbguest)
+* Optionally, but it's a good idea, install the vagrant virtualbox [guest additions plugin](https://github.com/dotless-de/vagrant-vbguest) and also [the hostmaster plugin](https://github.com/mosaicxm/vagrant-hostmaster)
 * You should have the vagrant project supplied `precise64` box installed. If you don't then execute this: `vagrant box add precise64 http://files.vagrantup.com/precise64.box`
 
 ## Install
 * Clone this repository! :-)
-* `cd icclab-vagrant-devstack`
+* `cd vagrant-devstack`
 * `git submodules init`
 * `git submodules update`
 * `vagrant up`
 
-The initial install takes time so go do something useful or have a coffee! :-) When it's done, you should be able to reach the OpenStack dashboard from [http://localhost:8080](http://localhost:8080). If you see a default apache page then execute `vagrant reload`. If you wish to ssh to the OpenStack virtual box execute `vagrant ssh`.
+The initial install takes time so go do something useful or have a coffee! :-) When it's done, you should be able to reach the OpenStack dashboard from [http://10.1.2.44](http://10.1.2.44). If you use the hostmaster plugin then access via [http://devstack.local](http://devstack.local). If you wish to ssh to the OpenStack virtual box execute `vagrant ssh`.
 
 ## Notes
 1. If you wish to enable **Heat** then add to the `$localrc_cnt` variable (in `manifests/site.pp`) the following:
@@ -35,7 +35,7 @@ The initial install takes time so go do something useful or have a coffee! :-) W
 
 4. To experiment with the various APIs via python:
    * `vagrant ssh`
-   * `sudo pip install bpython` - optional but a nice interactive interpreter
+   * `sudo pip install bpython` - optional but a nice interactive interpreter. [IPython](http://ipython.org) does a great job too.
    * Try some code!  
      `>>> from cinderclient.v1 import client`  
      `>>> USER="admin"`  

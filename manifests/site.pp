@@ -49,7 +49,8 @@ RABBIT_PASSWORD=admin
 SERVICE_PASSWORD=admin
 SERVICE_TOKEN=admin
 APACHE_USER=vagrant
-API_RATE_LIMIT=False"
+API_RATE_LIMIT=False
+HOST_IP=10.1.2.44"
 
     file { "/home/vagrant/devstack/localrc":
       content 	=> "$localrc_cnt",

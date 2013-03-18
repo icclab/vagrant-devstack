@@ -16,6 +16,8 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+dhostname = "devstack.local"
+
 Vagrant::Config.run do |config|
 
   config.vm.define :devstack do |devstack_config|
@@ -25,18 +27,16 @@ Vagrant::Config.run do |config|
 
     # devstack_config.vm.boot_mode = :gui
     devstack_config.vm.network  :hostonly, "10.1.2.44" #:hostonly or :bridged - default is NAT
-    devstack_config.vm.host_name = "devstack"
+    devstack_config.vm.host_name = dhostname
     devstack_config.vm.customize ["modifyvm", :id, "--memory", 1024]
     devstack_config.ssh.max_tries = 100
-    devstack_config.vm.forward_port 80, 8080
-    devstack_config.vm.forward_port 6080, 6080
 
     devstack_config.vm.provision :puppet do |devstack_puppet|
       devstack_puppet.pp_path = "/tmp/vagrant-puppet"
       devstack_puppet.module_path = "modules"
       devstack_puppet.manifests_path = "manifests"
       devstack_puppet.manifest_file = "site.pp"
-      devstack_puppet.facter = { "fqdn" => "devstack.local" }
+      devstack_puppet.facter = { "fqdn" => dhostname }
     end
   end
 end
