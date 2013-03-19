@@ -4,8 +4,8 @@ This project will allow you automate the creation of a VM with [devstack](http:/
 
 ## Prereqs
 
-* Install [VirtualBox](http://virtualbox.org). **Note:** *this has not been tested on the latest vagrant 1.1.0*
-* Install [vagrant](http://vagrantup.com)
+* Install [VirtualBox](http://virtualbox.org).
+* Install [vagrant](http://vagrantup.com). **Note:** *this has not been tested on the latest vagrant 1.1.0*
 * Optionally, but it's a good idea, install the vagrant virtualbox [guest additions plugin](https://github.com/dotless-de/vagrant-vbguest) and also [the hostmaster plugin](https://github.com/mosaicxm/vagrant-hostmaster)
 
 ## Install

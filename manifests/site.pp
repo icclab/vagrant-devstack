@@ -42,6 +42,8 @@ node /^devstack/ {
 		require 	=> Package["git"],
 	}
 
+# , http://fedorapeople.org/groups/heat/prebuilt-jeos-images/F16-x86_64-cfntools.qcow2,http://fedorapeople.org/groups/heat/prebuilt-jeos-images/F16-i386-cfntools.qcow2'"
+# ENABLED_SERVICES+=,heat,h-api,h-api-cfn,h-api-cw,h-eng
 	$localrc_cnt = "
 ADMIN_PASSWORD=admin
 MYSQL_PASSWORD=admin
@@ -50,7 +52,9 @@ SERVICE_PASSWORD=admin
 SERVICE_TOKEN=admin
 APACHE_USER=vagrant
 API_RATE_LIMIT=False
-HOST_IP=10.1.2.44"
+HOST_IP=10.1.2.44
+FLOATING_RANGE=10.1.2.224/27
+IMAGE_URLS+='http://uec-images.ubuntu.com/precise/current/precise-server-cloudimg-amd64-disk1.img'"
 
     file { "/home/vagrant/devstack/localrc":
       content 	=> "$localrc_cnt",
