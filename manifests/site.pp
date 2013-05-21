@@ -54,7 +54,7 @@ node /^devstack/ {
   API_RATE_LIMIT=False
   HOST_IP=10.1.2.44
   FLOATING_RANGE=10.1.2.224/27
-  IMAGE_URLS+='http://uec-images.ubuntu.com/precise/current/precise-server-cloudimg-amd64-disk1.img'"
+  IMAGE_URLS+='http://download.cirros-cloud.net/0.3.1/cirros-0.3.1-x86_64-uec.tar.gz'"
 
   file { "/home/vagrant/devstack/localrc":
     content 	=> "$localrc_cnt",
