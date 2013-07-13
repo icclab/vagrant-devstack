@@ -28,7 +28,7 @@ Vagrant::Config.run do |config|
     # devstack_config.vm.boot_mode = :gui
     devstack_config.vm.network  :hostonly, "10.1.2.44" #:hostonly or :bridged - default is NAT
     devstack_config.vm.host_name = dhostname
-    devstack_config.vm.customize ["modifyvm", :id, "--memory", 1024]
+    devstack_config.vm.customize ["modifyvm", :id, "--memory", 1280]
     devstack_config.ssh.max_tries = 100
 
     devstack_config.vm.provision :puppet do |devstack_puppet|
