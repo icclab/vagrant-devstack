@@ -32,7 +32,7 @@ Vagrant::Config.run do |config|
     devstack_config.ssh.max_tries = 100
 
     devstack_config.vm.provision :puppet do |devstack_puppet|
-      devstack_puppet.pp_path = "/tmp/vagrant-puppet"
+      #devstack_puppet.pp_path = "/tmp/vagrant-puppet"
       devstack_puppet.module_path = "modules"
       devstack_puppet.manifests_path = "manifests"
       devstack_puppet.manifest_file = "site.pp"
